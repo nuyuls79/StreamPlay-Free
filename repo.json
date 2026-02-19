@@ -1,0 +1,9 @@
+{
+    "name": "StreamPlay-Free Repo",
+    "iconUrl": "https://raw.githubusercontent.com/nuyuls79/Zaneta/main/Icons/Adi.png",
+    "description": "Repository Plugin StreamPlay-Free",
+    "manifestVersion": 1,
+    "pluginLists": [
+      "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/plugins.json"
+    ]
+}
