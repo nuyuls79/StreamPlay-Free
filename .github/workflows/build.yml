@@ -143,7 +143,7 @@ jobs:
           echo KAIMEG=$KAIMEG >> local.properties
           echo NuvioStreams=$NuvioStreams >> local.properties
           echo YFXDEC=$YFXDEC >> local.properties
-          gak YFXENC=$YFXENC >> local.properties
+          echo YFXENC=$YFXENC >> local.properties
           echo VideasyDEC=$VideasyDEC >> local.properties
       
       - name: Build Plugins
@@ -171,3 +171,4 @@ jobs:
           git add .
           git commit --amend -m "Build $GITHUB_SHA" || exit 0
           git push --force
+
