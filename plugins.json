@@ -1,0 +1,1398 @@
+[
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://anichin.club&size=%size%",
+        "fileHash": "sha256-c8471d45f467f2f59bbc31f6d4639bbc2cb8d5b53f2af915427974ea8a8e20ab",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 32659,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92",
+            "CodeSanzz"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "Cartoon"
+        ],
+        "version": 25,
+        "internalName": "AnichinMoe",
+        "description": "Anichin Moe",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/AnichinMoe.cs3",
+        "name": "AnichinMoe"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://v1.animasu.top&size=%size%",
+        "fileHash": "sha256-08c3c7928a11bc93830c5f9e40959b18cf20fac9fef9c38555cc21ae06eb5c6e",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 24917,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Hexated"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "OVA",
+            "Anime"
+        ],
+        "version": 2,
+        "internalName": "Animasu",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Animasu.cs3",
+        "name": "Animasu"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://154.26.137.28&size=%size%",
+        "fileHash": "sha256-0a878eda25e4851214277d507ff5f4c637a4a800006aaa3079e6123708befc46",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 60321,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Hexated, Duro92"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "OVA"
+        ],
+        "version": 2,
+        "internalName": "AnimeSailProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/AnimeSailProvider.cs3",
+        "name": "AnimeSailProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=animexin.dev&sz=%size%",
+        "jarFileSize": 56815,
+        "fileHash": "sha256-695270b1f2008aead4103b5a7756b599bd9b7d599a391de0346a254b4eb9ced7",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 14940,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Phisher98"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "Cartoon"
+        ],
+        "version": 9,
+        "internalName": "Animexin",
+        "jarUrl": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Animexin.jar",
+        "description": "Anime and Movies",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Animexin.cs3",
+        "name": "Animexin",
+        "jarHash": "sha256-718dd4119c59d5e953874052c7f04740e4c41fae74c258db8a555900153118c3"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://anoboy.be&size=%size%",
+        "fileHash": "sha256-53cac281b5bb6d5fd50d8a466eb45107efe9199a1a884a3a1af0f11d198c3eef",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 58235,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "OVA",
+            "Anime"
+        ],
+        "version": 3,
+        "internalName": "Anoboy",
+        "description": "Anoboy",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Anoboy.cs3",
+        "name": "Anoboy"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://auratail.vip&size=%size%",
+        "fileHash": "sha256-2acaf24739f86357c581582418e5279e3f6d750b80a07a3e4d5122cc23200ab1",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 36267,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "duro92"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "OVA",
+            "Anime"
+        ],
+        "version": 1,
+        "internalName": "AuraTail",
+        "description": "AuraTail Donghua",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/AuraTail.cs3",
+        "name": "AuraTail"
+    },
+    {
+        "iconUrl": "https://www.themoviedb.org/favicon.ico",
+        "fileHash": "sha256-83886f90e0e24f15b9a380d91da16496835ff6adb1ce5bf718d0cba4b3fb1386",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 62395,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "AutoEmbedProvider",
+        "description": "AutoEmbed TMDB-backed movie and TV catalog provider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/AutoEmbedProvider.cs3",
+        "name": "AutoEmbedProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://azmovies.to&size=%size%",
+        "fileHash": "sha256-27cba04f5fdf570406bdca3ede66b3c479b2c488ea9c774b420cc212e046b1c3",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 53979,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "Azmovies",
+        "description": "Azmovies",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Azmovies.cs3",
+        "name": "Azmovies"
+    },
+    {
+        "iconUrl": "https://play-lh.googleusercontent.com/G9s84Cm1TDnKDX2P8nipS_s60cuCnYtjBRRLespF8nivjXmbV9tF1fY37clZhXMLaA",
+        "fileHash": "sha256-37cd35b88a74957bfb57a240c810ecf836995035c9bb9164d32dbc331a32c98e",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 83013,
+        "status": 3,
+        "language": "ta",
+        "authors": [
+            "NivinCNC"
+        ],
+        "tvTypes": [
+            "Anime",
+            "Movies",
+            "TvSeries",
+            "Documentary"
+        ],
+        "version": 4,
+        "internalName": "BilibiliProvider",
+        "description": "Bilibili TV - International streaming platform for anime, movies, and variety shows (bilibili.tv)",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/BilibiliProvider.cs3",
+        "name": "BilibiliProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://donghub.vip&size=%size%",
+        "fileHash": "sha256-101455e5ff9f27b77928538e11f74f96eab1edab621d603c6ec8fa9b0e85b617",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 18879,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "duro92",
+            "CodeSannz"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "Cartoon"
+        ],
+        "version": 6,
+        "internalName": "Donghub",
+        "description": "Anime and Movies",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Donghub.cs3",
+        "name": "Donghub"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://db.hafizhibnusyam.my.id&size=%size%",
+        "fileHash": "sha256-39987908421d2c43762df17f47e285fe58849b202d6a263ae740f39e34eb8480",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 29781,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "AsianDrama"
+        ],
+        "version": 1,
+        "internalName": "Dramabox",
+        "description": "DramaBox API",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Dramabox.cs3",
+        "name": "Dramabox"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://justilien.com&size=%size%",
+        "fileHash": "sha256-9827f4a515f5c1c84e41e9fb2867e7c170be064f54ab12511fcbcb5fa4a0c62a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 32571,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 16,
+        "internalName": "Dutamovie",
+        "description": "DutaMovie",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Dutamovie.cs3",
+        "name": "Dutamovie"
+    },
+    {
+        "iconUrl": "https://offshorebankservices.com/wp-content/uploads/2022/07/cropped-dutamovie21-512x512-1-60x60.png",
+        "fileHash": "sha256-7eed0a4655295e19ae4a4c73db118f3d5e468dd305ae2c0b1ef13b04c81bf65a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 29393,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Miku"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "AsianDrama"
+        ],
+        "version": 1,
+        "internalName": "DutamovieProvider",
+        "description": "DutaMovie \u2014 Streaming Movie and TV Series",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/DutamovieProvider.cs3",
+        "name": "DutamovieProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/phisher98/TVVVV/main/eporner.ico",
+        "fileHash": "sha256-734acba4b1a97f6ee4b12c4f9275b79eb21cb0e5acf8290e4e26d1bef3fd94d5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 12844,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "AdiManu"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 13,
+        "internalName": "Eporner",
+        "description": "Eporner",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Eporner.cs3",
+        "name": "Eporner"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://filmapik.singles&size=%size%",
+        "fileHash": "sha256-f8f19bb42a8931e3cfb95d6dfac2f3a2c7b5801f731b202e94830d1c21e7f45b",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 23985,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92",
+            "CodeSanzz"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 3,
+        "internalName": "FilmApik",
+        "description": "Filmapik",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/FilmApik.cs3",
+        "name": "FilmApik"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://s3.iix.llc&size=%size%",
+        "fileHash": "sha256-53728b30642aee5fb192e6da405f8b87fe666eaa0a2eb5d8a2dcb9b70d614bc5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 25728,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "Filmkita",
+        "description": "Filmkita",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Filmkita.cs3",
+        "name": "Filmkita"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://free-reels.com&size=%size%",
+        "fileHash": "sha256-ba8be89d52e32d9ab1c8e383f1ab174cf5c6a0177049525fe86c41e65ec27db1",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 70460,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "duro92"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "AsianDrama"
+        ],
+        "version": 1,
+        "internalName": "FreeReels",
+        "description": "FreeReels short drama provider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/FreeReels.cs3",
+        "name": "FreeReels"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://fufafilm.com&size=%size%",
+        "fileHash": "sha256-4ddecdbfa876f516056060d7b9e8c6ff91cd28e04bdae63abb1f5a0d35d3306d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 27856,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 3,
+        "internalName": "Fufafilm",
+        "description": "Fufafilm",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Fufafilm.cs3",
+        "name": "Fufafilm"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://funmovieslix.com&size=%size%",
+        "fileHash": "sha256-a01520b5ec141dce02c12b492431ff61e04e5573f6489be169145544dfc57ee0",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 38069,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Phisher98"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 3,
+        "internalName": "Funmovieslix",
+        "description": "Indonesia Source",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Funmovieslix.cs3",
+        "name": "Funmovieslix"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://v2.hidoristream.online&size=%size%",
+        "fileHash": "sha256-e5e8c3654ccca71f8c6d2a7b091c9bf9f0d5d12de5be9899688d7a84f20cdb0d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 36688,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "OVA",
+            "Anime"
+        ],
+        "version": 1,
+        "internalName": "Hidoristream",
+        "description": "Hidoristream",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Hidoristream.cs3",
+        "name": "Hidoristream"
+    },
+    {
+        "iconUrl": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://idlixian.com&size=16",
+        "fileHash": "sha256-2a062bbd857a731a48c197d6442fd9038a6a96b0d7d92b462871b64011e9a097",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 41916,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "AdiManu"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime",
+            "AsianDrama"
+        ],
+        "version": 2,
+        "internalName": "IdlixProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/IdlixProvider.cs3",
+        "name": "IdlixProvider"
+    },
+    {
+        "iconUrl": "https://homecookingrocks.com/wp-content/uploads/2024/10/cropped-indomax21-favicon-color-1.png",
+        "fileHash": "sha256-291e74ca8a17c18cf47e8c45458dcd9e2b9b45f2e45fdb1969cdb47ec49ee7a5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 21389,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 6,
+        "internalName": "IndoAsia",
+        "description": "Jangan Coli Yaa",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/IndoAsia.cs3",
+        "name": "IndoAsia"
+    },
+    {
+        "iconUrl": "https://missav.ws/missav/logo-square.png",
+        "fileHash": "sha256-326804e3de8188b0076233fd996ff33776f87245860c8a89eb31e207e48e7c7a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 22188,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldey84"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 10,
+        "internalName": "JavHey",
+        "description": "Best Japan AV porn site, free forever, high speed, no lag, over 100,000 videos, daily update, no ads while playing video.",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/JavHey.cs3",
+        "name": "JavHey"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://tv2.kawanfilm21.co&size=%size%",
+        "fileHash": "sha256-0c59308bf307dac4c692643daa342edcf564ecb772ecad1e08075fe38dc72973",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 24727,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 5,
+        "internalName": "Kawanfilm",
+        "description": "Kawanfilm",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Kawanfilm.cs3",
+        "name": "Kawanfilm"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://kissasian.cam&size=%size%",
+        "fileHash": "sha256-dc31ae062a948df2ff38d11dc690da60dd8312cd1e120c0c0c30303cc7cf33bc",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 30068,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 4,
+        "internalName": "Kissasian",
+        "description": "Kissasian",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Kissasian.cs3",
+        "name": "Kissasian"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kisskh.co&sz=%size%",
+        "fileHash": "sha256-e4f4e088081f1f3a88957f2108d81ee18b40496df64f383176377c0c52d5544f",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 28480,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "michat88"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "version": 17,
+        "internalName": "KisskhProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/KisskhProvider.cs3",
+        "name": "KisskhProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://kitanonton2.guru&size=%size%",
+        "fileHash": "sha256-fb5127639a1eb86d7aa9782e9158047754ef69be2ba9e3044602da85afddeee3",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 38476,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "AsianDrama",
+            "Anime"
+        ],
+        "version": 1,
+        "internalName": "KitanontonProvider",
+        "description": "Kitanonton",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/KitanontonProvider.cs3",
+        "name": "KitanontonProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://klikxxi.fit&size=%size%",
+        "fileHash": "sha256-23cea3af89a909e9e94f1ea172b837f2d686effc9ba01e41c991e3387f11cb6b",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 29912,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 9,
+        "internalName": "Klikxxi",
+        "description": "Klikxxi",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Klikxxi.cs3",
+        "name": "Klikxxi"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://v17.kuramanime.ink&size=%size%",
+        "fileHash": "sha256-a7705d7831c4f59271f5d68b464298e5a96999a608f3d3b8ea7c7480c330008b",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 50381,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "duro92"
+        ],
+        "tvTypes": [
+            "Anime",
+            "AnimeMovie",
+            "OVA"
+        ],
+        "version": 1,
+        "internalName": "Kuramanime",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Kuramanime.cs3",
+        "name": "Kuramanime"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://kuronime.sbs&size=%size%",
+        "fileHash": "sha256-88b8ddd3bec895db619e153ba3734d0a31d67d57007fd7020978aa02c9db86ee",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 37494,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Anime",
+            "AnimeMovie",
+            "OVA"
+        ],
+        "version": 1,
+        "internalName": "KuronimeProvider",
+        "description": "Kuronime",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/KuronimeProvider.cs3",
+        "name": "KuronimeProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://layarasia.site&size=%size%",
+        "fileHash": "sha256-aa9100b5206d2793ae1341db2de8d3ac26b65be65ab12608a2a63997e25de479",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 27093,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 3,
+        "internalName": "Layarasia",
+        "description": "Layarasia",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Layarasia.cs3",
+        "name": "Layarasia"
+    },
+    {
+        "iconUrl": "https://assets.lk21.party/favicons/apple-icon-144x144.png",
+        "fileHash": "sha256-1bf4896ba87db17e73b427636656cc3d1f60680a78ad846d57e19311ee753347",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 53097,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 6,
+        "internalName": "LayarKacaProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/LayarKacaProvider.cs3",
+        "name": "LayarKacaProvider"
+    },
+    {
+        "iconUrl": "http://mangoporn.net/wp-content/uploads/2024/07/mangoporn.net_.png",
+        "fileHash": "sha256-cbabb053ff9d72d015c63145e188b1e8620f47df295975bb80ebc2e50901fca5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 13852,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "AmanHnB"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 4,
+        "internalName": "Mangoporn",
+        "description": "MangoPorn",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Mangoporn.cs3",
+        "name": "Mangoporn"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://tv11.melongmovies.com&size=%size%",
+        "fileHash": "sha256-2318ae60878e6577f416895f68a967e0e8299c948e697881da229c104ab66c82",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 22561,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 9,
+        "internalName": "Melongmovie",
+        "description": "Melongmovie",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Melongmovie.cs3",
+        "name": "Melongmovie"
+    },
+    {
+        "iconUrl": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ssstik.tv&size=16",
+        "fileHash": "sha256-7085a3088b48329c9c44c363bf91cbf8be0c8b0a48cdbf21ef41a09b59c26066",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 32401,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime",
+            "AsianDrama"
+        ],
+        "version": 2,
+        "internalName": "Midasxxi",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Midasxxi.cs3",
+        "name": "Midasxxi"
+    },
+    {
+        "iconUrl": "https://missav.ws/missav/logo-square.png",
+        "fileHash": "sha256-6e0563834c5b3614956295a80afeb9ccb825e13d0f4de4c6a20717aa28177058",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 15051,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "aldey84"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 9,
+        "internalName": "MissAv",
+        "description": "Best Japan AV porn site, free forever, high speed, no lag, over 100,000 videos, daily update, no ads while playing video.",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/MissAv.cs3",
+        "name": "MissAv"
+    },
+    {
+        "iconUrl": "https://moviebox.ph/favicon.ico",
+        "fileHash": "sha256-dc9d8f5ad2b6fd175ed96244a0ec54fc4d0f3be68cc5c25708a92a2cdfbac319",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 32058,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 7,
+        "internalName": "Moviebox",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Moviebox.cs3",
+        "name": "Moviebox"
+    },
+    {
+        "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/MovieBoxProvider/icon.png",
+        "fileHash": "sha256-bb83ddaca917a3ea375a7af0c2bc2d9d74b1bd5ca75a40891efcde1ef9dc1500",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 38420,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "NivinCNC,Phisher98"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 12,
+        "internalName": "MovieBoxProvider",
+        "description": "Multi Language Movies and Series Provider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/MovieBoxProvider.cs3",
+        "name": "MovieBoxProvider"
+    },
+    {
+        "iconUrl": "https://new31.ngefilm.site/wp-content/uploads/2023/08/cropped-imageedit_8_4481000408-60x60.png",
+        "fileHash": "sha256-6b9706f969be97a0c9415b2f957b3a01f4467aac9486715631467b6096d11281",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 26392,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 9,
+        "internalName": "NgeFilm",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/NgeFilm.cs3",
+        "name": "NgeFilm"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nomat.site&size=%size%",
+        "fileHash": "sha256-1bb987add854edc2f61320a57d3547bd5d60073686cb3fd11e2d872996452520",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 17458,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 4,
+        "internalName": "Nomat",
+        "description": "Nomat",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Nomat.cs3",
+        "name": "Nomat"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://s11.nontonanimeid.boats&size=%size%",
+        "fileHash": "sha256-2630784ad72cb8feb9be499e776dae1fbc09427bd1d51cbf60984480578562d4",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 58196,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Hexated, Duro92"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "OVA"
+        ],
+        "version": 22,
+        "internalName": "NontonAnimeIDProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/NontonAnimeIDProvider.cs3",
+        "name": "NontonAnimeIDProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=onetouchtv.xyz/&sz=%size%",
+        "jarFileSize": 166687,
+        "fileHash": "sha256-34d17d0a09930132c3532306299ab5ab7fc2ef17d03db2767e10d3ec0f0a35c6",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 37388,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Phisher98"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "OneTouchTV",
+        "jarUrl": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/OneTouchTV.jar",
+        "description": "Asian Dramas",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/OneTouchTV.cs3",
+        "name": "OneTouchTV",
+        "jarHash": "sha256-0290c5dc03833907bfab79d1dd41ef0947b5090453b773eb2124b80fcc5d1c11"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://anime.oploverz.ac&size=%size%",
+        "fileHash": "sha256-47c06a7b19c53d50516371b5343f57a9d3da14aa2049c489a93e81a99d9518ed",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 26977,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92",
+            "CodeSanzz"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "OVA"
+        ],
+        "version": 31,
+        "internalName": "OploverzProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/OploverzProvider.cs3",
+        "name": "OploverzProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://45.11.57.243&size=%size%",
+        "fileHash": "sha256-4be315ed15db60c4cd0e3230a23120a8166a41b9cc40c2101114a5dff3e6dd03",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 20819,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 11,
+        "internalName": "Oppadrama",
+        "description": "Oppadrama",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Oppadrama.cs3",
+        "name": "Oppadrama"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://otakudesu.cloud&size=%size%",
+        "fileHash": "sha256-8357d146efba767c10f3625b5766b373cf7c7c7a224e54ee0bcea422fbeec172",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 24766,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Hexated"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "OVA"
+        ],
+        "version": 3,
+        "internalName": "OtakudesuProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/OtakudesuProvider.cs3",
+        "name": "OtakudesuProvider"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ww03.pencurimovie.bond&size=%size%",
+        "fileHash": "sha256-86061670a28645bac4a8feed3adf08df3c40ca4bbdf7deef184af527b6777612",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 15312,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Phisher98"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 8,
+        "internalName": "Pencurimovie",
+        "description": "Pencurimovie ",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Pencurimovie.cs3",
+        "name": "Pencurimovie"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ww192.pencurimoviesubmalay.motorcycles&size=%size%",
+        "fileHash": "sha256-426ea1eb669556888159ec192db3e3d5e29448467b016e4b4382802d135b64a4",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 31247,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Pmsm",
+        "description": "PMSM (Pencuri Movie Sub Malay)",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Pmsm.cs3",
+        "name": "Pmsm"
+    },
+    {
+        "iconUrl": "https://podjav.tv/wp-content/uploads/2025/02/favicon-podjav.ico",
+        "fileHash": "sha256-61f4f6c51fbf96c638fece9407f765235f6db6fba8ca7b8fcb87512c8bc4abd7",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 19906,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "aldey84"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 9,
+        "internalName": "PODJAV",
+        "description": "Best Japan AV porn site, free forever, high speed, no lag, over 100,000 videos, daily update, no ads while playing video.",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/PODJAV.cs3",
+        "name": "PODJAV"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://reelshort.dramaview.web.id&size=%size%",
+        "fileHash": "sha256-74a495061ef93a38065c12f13ecdbc1497d591e113ea11f58097d18b2d7228da",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 30992,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "AsianDrama"
+        ],
+        "version": 1,
+        "internalName": "Reelshort",
+        "description": "ReelShort",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Reelshort.cs3",
+        "name": "Reelshort"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://v1.samehadaku.how&size=%size%",
+        "fileHash": "sha256-7c6ecee00e6e308efc5ee774d10b0d375b2b84f7540687906c0b48b0745e0845",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 17272,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92",
+            "CodeSanzz"
+        ],
+        "tvTypes": [
+            "AnimeMovie",
+            "OVA",
+            "Anime"
+        ],
+        "version": 25,
+        "internalName": "Samehadaku",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Samehadaku.cs3",
+        "name": "Samehadaku"
+    },
+    {
+        "iconUrl": "https://sflix.film/favicon.ico",
+        "fileHash": "sha256-896c72b6af79649a21aae65b7b90f9ec0c0b77cae26c456010dfde3ccbe37d6d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 35604,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "AdiManu"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime",
+            "AsianDrama"
+        ],
+        "version": 3,
+        "internalName": "Sflix",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Sflix.cs3",
+        "name": "Sflix"
+    },
+    {
+        "iconUrl": "https://github.com/duro92/ExtCloud/blob/main/SoraStream/Icon.png",
+        "fileHash": "sha256-7c8bfc344b4b46aa23cb45f70fba2821ccd172bb6e831a89fb6470e2044565e1",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 212959,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Hexated",
+            "Sora"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "version": 237,
+        "internalName": "SoraStream",
+        "description": "#1 best extention based on MultiAPI",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/SoraStream.cs3",
+        "name": "SoraStream"
+    },
+    {
+        "iconUrl": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
+        "fileHash": "sha256-62192aed47bf1cdb3071a9197b50ed47f4f009a9e03e9b9bbcbee9cd50b04216",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 895644,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Phisher98",
+            "Hexated"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Anime",
+            "Movie",
+            "Cartoon",
+            "AnimeMovie"
+        ],
+        "version": 602,
+        "internalName": "StreamPlay",
+        "description": "#1 best extention based on MultiAPI",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/StreamPlay.cs3",
+        "name": "StreamPlay"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://winbu.net&size=%size%",
+        "fileHash": "sha256-0663a033c92ea031bec14ab557354deeac55d566f9ce9c8638a6f0cdc47ee74b",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 32843,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Movie",
+            "Anime",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Winbu",
+        "description": "Winbu",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Winbu.cs3",
+        "name": "Winbu"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://winbu.net&size=%size%",
+        "fileHash": "sha256-fd28f01b3ad994033bd17b112160d646d6e3aeecf19e379e91ed95da0304925b",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 40883,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Miku"
+        ],
+        "tvTypes": [
+            "Movie",
+            "Anime",
+            "TvSeries"
+        ],
+        "version": 4,
+        "internalName": "WinbuProvider",
+        "description": "Winbu \u2014 Streaming Anime, Movie and TV Series",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/WinbuProvider.cs3",
+        "name": "WinbuProvider"
+    },
+    {
+        "iconUrl": "https://static.xhpingcdn.com/xh-mobile/images/favicon/favicon-v2-512x512.png?v=1",
+        "fileHash": "sha256-30b28e934727cff24ade2e410e4e028ec358b25f2a8d474cea0943406119b82d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 16044,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "aldey84"
+        ],
+        "tvTypes": [
+            "NSFW"
+        ],
+        "version": 9,
+        "internalName": "Xhamster",
+        "description": "Awas Jangan Coli Kawan",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Xhamster.cs3",
+        "name": "Xhamster"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/michat88/Zaneta/aa97004f4d1d74ed69245e56da2c6ad3293b6106/Icons/Adi.png",
+        "fileHash": "sha256-8abe23210c5b17bd8825cd776ac3a3728cb086ab201cee39e09c22425e39e89e",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 247185,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 8,
+        "internalName": "XSCinemax21",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XSCinemax21.cs3",
+        "name": "XSCinemax21"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/michat88/Zaneta/aa97004f4d1d74ed69245e56da2c6ad3293b6106/Icons/Adi.png",
+        "fileHash": "sha256-80e380d50753aa242a451b3950c646f05682c16b532a30bbfec866a81f38e10a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 235785,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 8,
+        "internalName": "XSDrakor",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XSDrakor.cs3",
+        "name": "XSDrakor"
+    },
+    {
+        "iconUrl": "https://moviebox.ph/favicon.ico",
+        "fileHash": "sha256-a0afa5e3229db4964cb29aae4f61d764af08e7f105064a16c58284d8281c1af6",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 30493,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 6,
+        "internalName": "XSmoviebox",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XSmoviebox.cs3",
+        "name": "XSmoviebox"
+    },
+    {
+        "iconUrl": "https://klikxxi.me/wp-content/uploads/2024/02/cropped-site-icon.png",
+        "fileHash": "sha256-29099e937ea55c5a2973dd6e7a33aa8973e42f46099a911600be28e6ae4307a7",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 237214,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 6,
+        "internalName": "XSmovies",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XSmovies.cs3",
+        "name": "XSmovies"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/michat88/Zaneta/aa97004f4d1d74ed69245e56da2c6ad3293b6106/Icons/Adi.png",
+        "fileHash": "sha256-73d39fdc4a9a317cab2d8d11a36fdb85f236e15cbeb47fa2bdccbc0b631b6d93",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 80436,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "aldry84"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 12,
+        "internalName": "XStream",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XStream.cs3",
+        "name": "XStream"
+    },
+    {
+        "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/CNC%20Verse/icon.png",
+        "fileHash": "sha256-8811c4658c29aaf9d24f915db781b89dd2b0fb40a73d37fa5ab0d666556131c4",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 71610,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "NivinCNC"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 58,
+        "internalName": "XStream Verse",
+        "description": "Netflix, PrimeVideo, Disney+ Hotstar Contents in Multiple Languages",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/XStream Verse.cs3",
+        "name": "XStream Verse"
+    },
+    {
+        "fileHash": "sha256-939af9259c172861850500a9e1f5d2847710d85cc9c292ca3269fcec24b8e8f9",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 141891,
+        "status": 3,
+        "authors": [
+            "Phisher98"
+        ],
+        "version": -1,
+        "internalName": "Youtube",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/Youtube.cs3",
+        "name": "Youtube"
+    },
+    {
+        "iconUrl": "https://www.youtube.com/s/desktop/711fd789/img/logos/favicon_144x144.png",
+        "fileHash": "sha256-cf6719ba0239f8ae57873c7500a01146c547fff7c17a392ed4921e08456f861a",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 38363,
+        "status": 1,
+        "authors": [
+            "doGior"
+        ],
+        "tvTypes": [
+            "Others"
+        ],
+        "version": 13,
+        "internalName": "YouTubeLive",
+        "description": "Videos, playlists and channels from YouTube",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/YouTubeLive.cs3",
+        "name": "YouTubeLive"
+    },
+    {
+        "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://zoronime.online&size=%size%",
+        "fileHash": "sha256-2a8b9a18b0e2821b2ad973b4bdae13e8672d97b5ac12d816004ef9dba83ea0aa",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 38409,
+        "status": 1,
+        "language": "id",
+        "authors": [
+            "Duro92"
+        ],
+        "tvTypes": [
+            "Anime",
+            "AnimeMovie",
+            "OVA"
+        ],
+        "version": 1,
+        "internalName": "ZoronimeProvider",
+        "description": "Zoronime",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/ZoronimeProvider.cs3",
+        "name": "ZoronimeProvider"
+    }
+]
