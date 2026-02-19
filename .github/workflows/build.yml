@@ -1,0 +1,150 @@
+name: Build
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - "*.md"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # =========================
+      # Checkout source
+      # =========================
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          path: src
+
+      # =========================
+      # Checkout builds branch
+      # =========================
+      - name: Checkout builds branch
+        uses: actions/checkout@v4
+        with:
+          ref: builds
+          path: builds
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # =========================
+      # Clean old builds
+      # =========================
+      - name: Clean old builds
+        run: |
+          rm -f $GITHUB_WORKSPACE/builds/*.cs3
+          rm -f $GITHUB_WORKSPACE/builds/*.jar
+          rm -f $GITHUB_WORKSPACE/builds/plugins.json
+          rm -f $GITHUB_WORKSPACE/builds/repo.json
+
+      # =========================
+      # Setup Java
+      # =========================
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+
+      # =========================
+      # Setup Android SDK
+      # =========================
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # =========================
+      # Create local.properties (SECRETS)
+      # =========================
+      - name: Create local.properties
+        working-directory: src
+        run: |
+          touch local.properties
+          echo "TMDB_API=${{ secrets.TMDB_API }}" >> local.properties
+          echo "StreamPlayAPI=${{ secrets.StreamPlayAPI }}" >> local.properties
+
+      # =========================
+      # Build Plugins
+      # =========================
+      - name: Build Plugins
+        working-directory: src
+        run: |
+          chmod +x gradlew
+          ./gradlew make makePluginsJson
+          ./gradlew ensureJarCompatibility
+
+          mkdir -p $GITHUB_WORKSPACE/builds
+
+          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds 2>/dev/null || true
+          cp **/build/*.jar $GITHUB_WORKSPACE/builds 2>/dev/null || true
+          cp **/build/libs/*.jar $GITHUB_WORKSPACE/builds 2>/dev/null || true
+          cp build/plugins.json $GITHUB_WORKSPACE/builds 2>/dev/null || true
+
+      # =========================
+      # Generate repo.json (AUTO)
+      # =========================
+      - name: Generate repo.json
+        working-directory: builds
+        run: |
+          echo "Generating repo.json..."
+
+          echo '{' > repo.json
+          echo '  "name": "StreamPlay Repository",' >> repo.json
+          echo '  "description": "Official plugin repository",' >> repo.json
+          echo '  "plugins": [' >> repo.json
+
+          first=true
+
+          for file in *.cs3; do
+            [ -e "$file" ] || continue
+
+            plugin="${file%.cs3}"
+
+            if [ "$first" = true ]; then
+              first=false
+            else
+              echo ',' >> repo.json
+            fi
+
+            echo '    {' >> repo.json
+            echo "      \"name\": \"$plugin\"," >> repo.json
+            echo '      "version": 1,' >> repo.json
+            echo "      \"file\": \"$file\"," >> repo.json
+            echo "      \"url\": \"https://raw.githubusercontent.com/${{ github.repository }}/builds/$file\"" >> repo.json
+            echo -n '    }' >> repo.json
+          done
+
+          echo '' >> repo.json
+          echo '  ]' >> repo.json
+          echo '}' >> repo.json
+
+      # =========================
+      # Commit & Push
+      # =========================
+      - name: Push builds
+        working-directory: builds
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Build $GITHUB_SHA"
+          git push
