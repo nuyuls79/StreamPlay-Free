@@ -45,7 +45,7 @@ jobs:
 
       - name: Access Secrets
         env:
-          # --- SEMUA SECRETS KAMU ---
+          # --- SEMUA SECRETS KAMU (DIPERTAHANKAN SESUAI ASLI) ---
           TMDB_API: ${{ secrets.TMDB_API }}
           DUMP_API: ${{ secrets.DUMP_API }}
           DUMP_KEY: ${{ secrets.DUMP_KEY }}
@@ -153,23 +153,23 @@ jobs:
           ./gradlew make makePluginsJson
           ./gradlew ensureJarCompatibility
           
-          # Copy .cs3 dan file lainnya ke branch builds
           cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
           cp **/build/*.jar $GITHUB_WORKSPACE/builds || true
           cp **/build/libs/*.jar $GITHUB_WORKSPACE/builds || true
           cp build/plugins.json $GITHUB_WORKSPACE/builds
 
-      # --- BAGIAN PEMBUATAN REPO.JSON ---
-      - name: Auto Generate repo.json
+      # --- PERBAIKAN: GENERATE REPO.JSON OTOMATIS BERDASARKAN REPO INI ---
+      - name: Create repo.json
         run: |
+          REPO="${{ github.repository }}"
           cat <<EOF > $GITHUB_WORKSPACE/builds/repo.json
           {
-              "name": "Michat88 Repo",
-              "iconUrl": "https://raw.githubusercontent.com/michat88/Zaneta/main/Icons/Adi.png",
-              "description": "Repository Plugin Michat88",
+              "name": "StreamPlay-Free Repo",
+              "iconUrl": "https://raw.githubusercontent.com/nuyuls79/Zaneta/main/Icons/Adi.png",
+              "description": "Repository Plugin StreamPlay-Free",
               "manifestVersion": 1,
               "pluginLists": [
-                "https://raw.githubusercontent.com/michat88/PremiumRepo/builds/plugins.json"
+                "https://raw.githubusercontent.com/$REPO/builds/plugins.json"
               ]
           }
           EOF
@@ -180,6 +180,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          # Menggunakan --amend agar branch builds tidak penuh history sampah
           git commit --amend -m "Build $GITHUB_SHA" || git commit -m "Build $GITHUB_SHA" || exit 0
           git push --force
