@@ -524,37 +524,35 @@ class YoutubeProvider(
         val list = mutableListOf<MainPageData>()
         val isEn = lang == "en"
 
-        // --- TAB BAWAAN (TANPA GAMING, Teks Indonesia) ---
-        list.add(
-            MainPageData(
-                if (isEn) "🎵 Music" else "🎵 Musik",
-                "https://www.youtube.com/@YouTubeMusic"
-            )
-        )
-        list.add(
-            MainPageData(
-                if (isEn) "📰 News" else "📰 Berita",
-                "https://www.youtube.com/@BBCNews"
-            )
-        )
-        list.add(
-            MainPageData(
-                if (isEn) "🎬 Movies" else "🎬 Film",
-                "https://www.youtube.com/@YouTubeMovies"
-            )
-        )
-
-        // Tab Trending (bisa dimatikan di pengaturan)
+        // 1. Beranda
         if (sharedPref?.getBoolean("show_trending_home", true) == true) {
-            list.add(
-                MainPageData(
-                    if (isEn) "Trending" else "Trending", // atau bisa "Tren" kalau mau
-                    "Home"
-                )
-            )
+            list.add(MainPageData(if (isEn) "🏠 Home" else "🏠 Beranda", "Home"))
         }
 
-        // Bagian kustom dari pengaturan (Manage Homepage Channels)
+        // 2. Shorts
+        list.add(MainPageData(if (isEn) "📱 Shorts" else "📱 Shorts", "Home"))
+
+        // 3. Trending
+        list.add(MainPageData(if (isEn) "🔥 Trending" else "🔥 Trending", "Home"))
+
+        // 4. Anak-anak
+        list.add(MainPageData(if (isEn) "🧒 Kids" else "🧒 Anak-anak", "https://www.youtube.com/@CoComelon"))
+
+        // 5. Permainan
+        list.add(MainPageData(if (isEn) "🎮 Gaming" else "🎮 Permainan", "https://www.youtube.com/@IGN"))
+
+        // 6. Berita: sub-kategori
+        list.add(MainPageData("📡 Live", "https://www.youtube.com/@BBCNews"))
+        list.add(MainPageData("🔥 Terpopuler", "https://www.youtube.com/@BBCNews"))
+        list.add(MainPageData("🌍 Dunia", "https://www.youtube.com/@CNN"))
+        list.add(MainPageData("🇮🇩 Nasional", "https://www.youtube.com/@KompasTV"))
+        list.add(MainPageData("🎬 Hiburan", "https://www.youtube.com/@NETVERSE"))
+        list.add(MainPageData("⚽ Olahraga", "https://www.youtube.com/@ESPN"))
+
+        // 7. Musik
+        list.add(MainPageData("🎵 Musik", "https://www.youtube.com/playlist?list=PL4fGSI1pDJn5kI81J1fWSXy3kM5K1sE8n"))
+
+        // 8. Channel kustom dari pengaturan
         val customSections = getCustomHomepages()
         customSections.filter { it.isEnabled }.forEach { section ->
             var title = section.name
