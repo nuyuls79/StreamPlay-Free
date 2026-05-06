@@ -2,11 +2,14 @@
 version = 30
 
 android {
+    namespace = "com.cncverse" // <--- tambahkan ini
+
     buildFeatures {
         buildConfig = true
         viewBinding = true
     }
 }
+
 dependencies {
     implementation("androidx.core:core:1.16.0")
     implementation("com.google.android.material:material:1.12.0")
