@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="header_tw">Pengaturan plugin YouTube</string>
-    <string name="changeLocalizationHeader_tw">Atur lokasi & bahasa</string>
+    <string name="changeLocalizationHeader_tw">Atur lokasi &amp; bahasa</string>
     <string name="changeHomepageHeader_tw">Atur bagian beranda</string>
     <string name="homepage_tw">Atur bagian beranda</string>
-    <string name="localization_tw">Atur lokasi & bahasa</string>
+    <string name="localization_tw">Atur lokasi &amp; bahasa</string>
     <string name="language_tw">Bahasa</string>
     <string name="country_tw">Negara</string>
     <string name="country_hint">ID</string>
