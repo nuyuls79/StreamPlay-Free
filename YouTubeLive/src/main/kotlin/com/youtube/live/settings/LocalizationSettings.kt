@@ -32,10 +32,12 @@ class LocalizationSettings(
             "id",
             BuildConfig.LIBRARY_PACKAGE_NAME
         )
+
         return this.findViewById(id)
     }
 
     private fun View.makeTvCompatible() {
+
         this.setPadding(
             this.paddingLeft + 10,
             this.paddingTop + 10,
@@ -47,6 +49,7 @@ class LocalizationSettings(
     }
 
     private fun getDrawable(name: String): Drawable? {
+
         val id = plugin.resources!!.getIdentifier(
             name,
             "drawable",
@@ -61,6 +64,7 @@ class LocalizationSettings(
     }
 
     private fun getString(name: String): String? {
+
         val id = plugin.resources!!.getIdentifier(
             name,
             "string",
@@ -97,17 +101,27 @@ class LocalizationSettings(
         // DEFAULT INDONESIA
         // =========================
 
+        val savedLanguage =
+            sharedPref?.getString("language", "id") ?: "id"
+
+        val savedCountry =
+            sharedPref?.getString("country", "ID") ?: "ID"
+
+        // APPLY LANGSUNG
+        NewPipe.setupLocalization(
+            Localization(savedLanguage.lowercase()),
+            ContentCountry(savedCountry.uppercase())
+        )
+
+        // SIMPAN DEFAULT JIKA BELUM ADA
         if (sharedPref?.contains("language") != true) {
 
-            NewPipe.setupLocalization(
-                Localization("id"),
-                ContentCountry("ID")
-            )
+            with(sharedPref.edit()) {
 
-            with(sharedPref?.edit()) {
-                this?.putString("language", "id")
-                this?.putString("country", "ID")
-                this?.apply()
+                putString("language", "id")
+                putString("country", "ID")
+
+                apply()
             }
         }
 
@@ -130,18 +144,14 @@ class LocalizationSettings(
         countryEditText.hint = getString("country_hint")
 
         // =========================
-        // AUTO FILL INDONESIA
+        // AUTO FILL
         // =========================
 
-        languageEditText.setText(
-            sharedPref?.getString("language", "id") ?: "id"
-        )
+        languageEditText.setText(savedLanguage)
+        countryEditText.setText(savedCountry)
 
-        countryEditText.setText(
-            sharedPref?.getString("country", "ID") ?: "ID"
-        )
-
-        val saveButton = view.findView<ImageButton>("save_button")
+        val saveButton =
+            view.findView<ImageButton>("save_button")
 
         saveButton.setImageDrawable(
             getDrawable("save_icon")
@@ -154,15 +164,15 @@ class LocalizationSettings(
 
                 override fun onClick(v: View?) {
 
-                    val language = languageEditText
-                        .text
-                        ?.trim()
-                        ?.toString()
+                    val language =
+                        languageEditText.text
+                            ?.trim()
+                            ?.toString()
 
-                    val country = countryEditText
-                        .text
-                        ?.trim()
-                        ?.toString()
+                    val country =
+                        countryEditText.text
+                            ?.trim()
+                            ?.toString()
 
                     if (
                         !language.isNullOrEmpty() &&
@@ -171,11 +181,13 @@ class LocalizationSettings(
                         country.length == 2
                     ) {
 
+                        // APPLY LANGSUNG
                         NewPipe.setupLocalization(
                             Localization(language.lowercase()),
                             ContentCountry(country.uppercase())
                         )
 
+                        // SAVE
                         with(sharedPref?.edit()) {
 
                             this?.putString(
