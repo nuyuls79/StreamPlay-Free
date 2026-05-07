@@ -4,6 +4,8 @@ import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +13,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.annotation.RequiresApi
-import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.lagradost.cloudstream3.CommonActivity.showToast
 import com.youtube.live.BuildConfig
@@ -116,12 +116,12 @@ class LocalizationSettings(
         // SIMPAN DEFAULT JIKA BELUM ADA
         if (sharedPref?.contains("language") != true) {
 
-            with(sharedPref.edit()) {
+            with(sharedPref?.edit()) {
 
-                putString("language", "id")
-                putString("country", "ID")
+                this?.putString("language", "id")
+                this?.putString("country", "ID")
 
-                apply()
+                this?.apply()
             }
         }
 
