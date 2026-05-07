@@ -22,6 +22,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.loadExtractor
 import org.schabi.newpipe.extractor.InfoItem
 import org.schabi.newpipe.extractor.InfoItem.InfoType
+import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.Page
 import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.channel.ChannelInfo
@@ -30,7 +31,6 @@ import org.schabi.newpipe.extractor.kiosk.KioskInfo
 import org.schabi.newpipe.extractor.linkhandler.SearchQueryHandler
 import org.schabi.newpipe.extractor.localization.ContentCountry
 import org.schabi.newpipe.extractor.localization.Localization
-import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.playlist.PlaylistInfo
 import org.schabi.newpipe.extractor.search.SearchInfo
 import org.schabi.newpipe.extractor.services.youtube.YoutubeService
@@ -44,8 +44,14 @@ open class YouTubeProvider(
 
     override var mainUrl = MAIN_URL
     override var name = "YouTube"
-    override val supportedTypes = setOf(TvType.Others)
+
+    override val supportedTypes = setOf(
+        TvType.Others,
+        TvType.Live
+    )
+
     override val hasMainPage = true
+
     override var lang = language
 
     open val SEARCH_CONTENT_FILTER = "videos"
@@ -56,24 +62,30 @@ open class YouTubeProvider(
 
     companion object {
 
-        const val MAIN_URL = "https://www.youtube.com"
+        const val MAIN_URL =
+            "https://www.youtube.com"
 
         var SEARCH_PAGE: Page? = null
 
-        lateinit var SEARCH_HANDLER: SearchQueryHandler
+        lateinit var SEARCH_HANDLER:
+                SearchQueryHandler
     }
 
     init {
 
-        // =========================
         // DEFAULT INDONESIA
-        // =========================
 
         val savedLanguage =
-            sharedPrefs?.getString("language", "id") ?: "id"
+            sharedPrefs?.getString(
+                "language",
+                "id"
+            ) ?: "id"
 
         val savedCountry =
-            sharedPrefs?.getString("country", "ID") ?: "ID"
+            sharedPrefs?.getString(
+                "country",
+                "ID"
+            ) ?: "ID"
 
         NewPipe.setupLocalization(
             Localization(savedLanguage),
@@ -85,15 +97,21 @@ open class YouTubeProvider(
     // TRENDING
     // =========================
 
-    fun getTrendingVideoUrls(page: Int): HomePageList? {
+    fun getTrendingVideoUrls(
+        page: Int
+    ): HomePageList? {
 
-        val kiosks = service.kioskList
+        val kiosks =
+            service.kioskList
 
         val trendingsUrl =
             kiosks.defaultKioskExtractor.url
 
         val infoItem =
-            KioskInfo.getInfo(service, trendingsUrl)
+            KioskInfo.getInfo(
+                service,
+                trendingsUrl
+            )
 
         val videos =
             if (page == 1) {
@@ -104,7 +122,8 @@ open class YouTubeProvider(
 
         if (page > 1) {
 
-            var hasNext = infoItem.hasNextPage()
+            var hasNext =
+                infoItem.hasNextPage()
 
             if (!hasNext) {
                 return null
@@ -112,23 +131,30 @@ open class YouTubeProvider(
 
             var count = 1
 
-            var nextPage = infoItem.nextPage
+            var nextPage =
+                infoItem.nextPage
 
-            while (count < page && hasNext) {
+            while (
+                count < page &&
+                hasNext
+            ) {
 
-                val more = KioskInfo.getMoreItems(
-                    service,
-                    trendingsUrl,
-                    nextPage
-                )
+                val more =
+                    KioskInfo.getMoreItems(
+                        service,
+                        trendingsUrl,
+                        nextPage
+                    )
 
                 if (count == page - 1) {
                     videos.addAll(more.items)
                 }
 
-                hasNext = more.hasNextPage()
+                hasNext =
+                    more.hasNextPage()
 
-                nextPage = more.nextPage
+                nextPage =
+                    more.nextPage
 
                 count++
             }
@@ -136,7 +162,9 @@ open class YouTubeProvider(
 
         val searchResponses =
             videos
-                .filter { !it.isShortFormContent }
+                .filter {
+                    !it.isShortFormContent
+                }
                 .map {
 
                     newMovieSearchResponse(
@@ -157,7 +185,7 @@ open class YouTubeProvider(
     }
 
     // =========================
-    // CATEGORY SEARCH
+    // CATEGORY
     // =========================
 
     suspend fun getCategoryVideos(
@@ -188,17 +216,70 @@ open class YouTubeProvider(
                 }
                 .take(20)
 
-        val results = videos.mapNotNull {
+        val results =
+            videos.mapNotNull {
 
-            newMovieSearchResponse(
-                it.name,
-                it.url,
-                TvType.Others
-            ) {
-                this.posterUrl =
-                    it.thumbnails.last().url
+                newMovieSearchResponse(
+                    it.name,
+                    it.url,
+                    TvType.Others
+                ) {
+                    this.posterUrl =
+                        it.thumbnails.last().url
+                }
             }
-        }
+
+        return HomePageList(
+            name = title,
+            list = results,
+            isHorizontalImages = true
+        )
+    }
+
+    // =========================
+    // LIVE
+    // =========================
+
+    suspend fun getLiveVideos(
+        query: String,
+        title: String
+    ): HomePageList? {
+
+        val handlerFactory =
+            service.searchQHFactory
+
+        val searchHandler =
+            handlerFactory.fromQuery(
+                "$query live",
+                listOf("videos"),
+                null
+            )
+
+        val searchInfo =
+            SearchInfo.getInfo(
+                service,
+                SearchQueryHandler(searchHandler)
+            )
+
+        val videos =
+            searchInfo.relatedItems
+                .filter {
+                    it.infoType == InfoType.STREAM
+                }
+                .take(20)
+
+        val results =
+            videos.mapNotNull {
+
+                newMovieSearchResponse(
+                    it.name,
+                    it.url,
+                    TvType.Live
+                ) {
+                    this.posterUrl =
+                        it.thumbnails.last().url
+                }
+            }
 
         return HomePageList(
             name = title,
@@ -226,41 +307,6 @@ open class YouTubeProvider(
                 mutableListOf<StreamInfoItem>()
             }
 
-        if (page > 1) {
-
-            var hasNext =
-                playlistInfo.hasNextPage()
-
-            if (!hasNext) {
-                return null
-            }
-
-            var count = 1
-
-            var nextPage =
-                playlistInfo.nextPage
-
-            while (count < page && hasNext) {
-
-                val more =
-                    PlaylistInfo.getMoreItems(
-                        service,
-                        url,
-                        nextPage
-                    )
-
-                if (count == page - 1) {
-                    videos.addAll(more.items)
-                }
-
-                hasNext = more.hasNextPage()
-
-                nextPage = more.nextPage
-
-                count++
-            }
-        }
-
         val searchResponses =
             videos.map {
 
@@ -275,7 +321,8 @@ open class YouTubeProvider(
             }
 
         return HomePageList(
-            name = "${playlistInfo.uploaderName}: ${playlistInfo.name}",
+            name =
+                "${playlistInfo.uploaderName}: ${playlistInfo.name}",
             list = searchResponses,
             isHorizontalImages = true
         )
@@ -298,11 +345,16 @@ open class YouTubeProvider(
 
         val tabs =
             tabsLinkHandlers.map {
-                ChannelTabInfo.getInfo(service, it)
+                ChannelTabInfo.getInfo(
+                    service,
+                    it
+                )
             }
 
         val videoTab =
-            tabs.first { it.name == "videos" }
+            tabs.first {
+                it.name == "videos"
+            }
 
         val videos =
             if (page == 1) {
@@ -310,46 +362,6 @@ open class YouTubeProvider(
             } else {
                 mutableListOf<InfoItem>()
             }
-
-        if (page > 1) {
-
-            var hasNext =
-                videoTab.hasNextPage()
-
-            if (!hasNext) {
-                return null
-            }
-
-            var count = 1
-
-            var nextPage =
-                videoTab.nextPage
-
-            while (count < page && hasNext) {
-
-                val videoTabHandler =
-                    tabsLinkHandlers.first {
-                        it.url.endsWith("/videos")
-                    }
-
-                val more =
-                    ChannelTabInfo.getMoreItems(
-                        service,
-                        videoTabHandler,
-                        nextPage
-                    )
-
-                if (count == page - 1) {
-                    videos.addAll(more.items)
-                }
-
-                hasNext = more.hasNextPage()
-
-                nextPage = more.nextPage
-
-                count++
-            }
-        }
 
         val searchResponses =
             videos.map {
@@ -384,11 +396,43 @@ open class YouTubeProvider(
             mutableListOf<HomePageList>()
 
         // TRENDING
+
         getTrendingVideoUrls(page)?.let {
             sections.add(it)
         }
 
-        // CATEGORY INDONESIA
+        // LIVE
+
+        getLiveVideos(
+            "tv indonesia",
+            "📡 Live TV Indonesia"
+        )?.let {
+            sections.add(it)
+        }
+
+        getLiveVideos(
+            "news indonesia",
+            "📰 Live News Indonesia"
+        )?.let {
+            sections.add(it)
+        }
+
+        getLiveVideos(
+            "gaming indonesia",
+            "🎮 Live Gaming Indonesia"
+        )?.let {
+            sections.add(it)
+        }
+
+        getLiveVideos(
+            "musik indonesia",
+            "🎵 Live Musik Indonesia"
+        )?.let {
+            sections.add(it)
+        }
+
+        // CATEGORY
+
         getCategoryVideos(
             "film indonesia terbaru",
             "🎬 Film Indonesia"
@@ -398,7 +442,7 @@ open class YouTubeProvider(
 
         getCategoryVideos(
             "anime indonesia",
-            "🌸 Anime"
+            "🌸 Anime Indonesia"
         )?.let {
             sections.add(it)
         }
@@ -432,13 +476,12 @@ open class YouTubeProvider(
         }
 
         // CUSTOM PLAYLIST
+
         val playlistsData =
-            sharedPrefs
-                ?.getStringSet(
-                    "playlists",
-                    emptySet()
-                )
-                ?: emptySet()
+            sharedPrefs?.getStringSet(
+                "playlists",
+                emptySet()
+            ) ?: emptySet()
 
         if (playlistsData.isNotEmpty()) {
 
@@ -459,21 +502,29 @@ open class YouTubeProvider(
                             .substringAfter("/")
 
                     val isPlaylist =
-                        urlPath.startsWith("playlist?list=")
+                        urlPath.startsWith(
+                            "playlist?list="
+                        )
 
                     val isChannel =
                         urlPath.startsWith("@") ||
-                        urlPath.startsWith("channel")
+                                urlPath.startsWith("channel")
 
                     val customSections =
-                        if (isPlaylist && !isChannel) {
+                        if (
+                            isPlaylist &&
+                            !isChannel
+                        ) {
 
                             playlistToSearchResponseList(
                                 playlistUrl,
                                 page
                             )
 
-                        } else if (!isPlaylist && isChannel) {
+                        } else if (
+                            !isPlaylist &&
+                            isChannel
+                        ) {
 
                             channelToSearchResponseList(
                                 playlistUrl,
@@ -487,16 +538,17 @@ open class YouTubeProvider(
                     customSections to data.third
                 }
 
-            list.sortedBy { it.second }
-                .forEach {
+            list.sortedBy {
+                it.second
+            }.forEach {
 
-                    val homepageSection =
-                        it.first
+                val homepageSection =
+                    it.first
 
-                    if (homepageSection != null) {
-                        sections.add(homepageSection)
-                    }
+                if (homepageSection != null) {
+                    sections.add(homepageSection)
                 }
+            }
         }
 
         return newHomePageResponse(
@@ -534,7 +586,9 @@ open class YouTubeProvider(
             val searchInfo =
                 SearchInfo.getInfo(
                     service,
-                    SearchQueryHandler(SEARCH_HANDLER)
+                    SearchQueryHandler(
+                        SEARCH_HANDLER
+                    )
                 )
 
             pageResults.addAll(
@@ -665,14 +719,18 @@ open class YouTubeProvider(
                 length.toInt()
 
             this.tags =
-                listOf(views, likes)
+                listOf(
+                    views,
+                    likes
+                )
 
             this.actors =
                 listOf(
                     ActorData(
                         Actor(
                             videoInfo.uploaderName,
-                            videoInfo.uploaderAvatars
+                            videoInfo
+                                .uploaderAvatars
                                 .lastOrNull()
                                 ?.url
                         )
