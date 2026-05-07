@@ -21,52 +21,96 @@ import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.localization.ContentCountry
 import org.schabi.newpipe.extractor.localization.Localization
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LocalizationSettings] factory method to
- * create an instance of this fragment.
- */
-class LocalizationSettings(private val plugin: YouTubePlugin, val sharedPref: SharedPreferences?) :
-    BottomSheetDialogFragment() {
+class LocalizationSettings(
+    private val plugin: YouTubePlugin,
+    val sharedPref: SharedPreferences?
+) : BottomSheetDialogFragment() {
 
     private fun <T : View> View.findView(name: String): T {
-        val id = plugin.resources!!.getIdentifier(name, "id", BuildConfig.LIBRARY_PACKAGE_NAME)
+        val id = plugin.resources!!.getIdentifier(
+            name,
+            "id",
+            BuildConfig.LIBRARY_PACKAGE_NAME
+        )
         return this.findViewById(id)
     }
 
     private fun View.makeTvCompatible() {
-        this.setPadding(this.paddingLeft + 10,this.paddingTop + 10,this.paddingRight + 10,this.paddingBottom + 10)
+        this.setPadding(
+            this.paddingLeft + 10,
+            this.paddingTop + 10,
+            this.paddingRight + 10,
+            this.paddingBottom + 10
+        )
+
         this.background = getDrawable("outline")
     }
 
     private fun getDrawable(name: String): Drawable? {
-        val id =
-            plugin.resources!!.getIdentifier(name, "drawable", BuildConfig.LIBRARY_PACKAGE_NAME)
-        return ResourcesCompat.getDrawable(plugin.resources!!, id, null)
+        val id = plugin.resources!!.getIdentifier(
+            name,
+            "drawable",
+            BuildConfig.LIBRARY_PACKAGE_NAME
+        )
+
+        return ResourcesCompat.getDrawable(
+            plugin.resources!!,
+            id,
+            null
+        )
     }
 
     private fun getString(name: String): String? {
-        val id =
-            plugin.resources!!.getIdentifier(name, "string", BuildConfig.LIBRARY_PACKAGE_NAME)
+        val id = plugin.resources!!.getIdentifier(
+            name,
+            "string",
+            BuildConfig.LIBRARY_PACKAGE_NAME
+        )
+
         return plugin.resources!!.getString(id)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
+
         val id = plugin.resources!!.getIdentifier(
             "localization_settings",
             "layout",
             BuildConfig.LIBRARY_PACKAGE_NAME
         )
+
         val layout = plugin.resources!!.getLayout(id)
+
         return inflater.inflate(layout, container, false)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+
+        // =========================
+        // DEFAULT INDONESIA
+        // =========================
+
+        if (sharedPref?.contains("language") != true) {
+
+            NewPipe.setupLocalization(
+                Localization("id"),
+                ContentCountry("ID")
+            )
+
+            with(sharedPref?.edit()) {
+                this?.putString("language", "id")
+                this?.putString("country", "ID")
+                this?.apply()
+            }
+        }
+
         val headerTw = view.findView<TextView>("header_tw")
         headerTw.text = getString("changeLocalizationHeader_tw")
 
@@ -76,41 +120,91 @@ class LocalizationSettings(private val plugin: YouTubePlugin, val sharedPref: Sh
         language_tw.text = getString("language_tw")
         country_tw.text = getString("country_tw")
 
-        val languageEditText = view.findView<EditText>("editText_language")
-        val countryEditText = view.findView<EditText>("editText_country")
+        val languageEditText =
+            view.findView<EditText>("editText_language")
+
+        val countryEditText =
+            view.findView<EditText>("editText_country")
 
         languageEditText.hint = getString("language_hint")
         countryEditText.hint = getString("country_hint")
 
+        // =========================
+        // AUTO FILL INDONESIA
+        // =========================
+
+        languageEditText.setText(
+            sharedPref?.getString("language", "id") ?: "id"
+        )
+
+        countryEditText.setText(
+            sharedPref?.getString("country", "ID") ?: "ID"
+        )
 
         val saveButton = view.findView<ImageButton>("save_button")
-        saveButton.setImageDrawable(getDrawable("save_icon"))
+
+        saveButton.setImageDrawable(
+            getDrawable("save_icon")
+        )
+
         saveButton.makeTvCompatible()
 
-        saveButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val language = languageEditText.text?.trim()?.toString()
-                val country = countryEditText.text?.trim()?.toString()
-                if (!language.isNullOrEmpty() && !country.isNullOrEmpty() && language.length == 2 && country.length == 2) {
-                    NewPipe.setupLocalization(
-                        Localization(language.lowercase()),
-                        ContentCountry(country.uppercase())
-                    )
+        saveButton.setOnClickListener(
+            object : View.OnClickListener {
 
-                    with(sharedPref?.edit()) {
-                        this?.putString("language", language.lowercase())
-                        this?.putString("country", country.uppercase())
-                        this?.apply()
+                override fun onClick(v: View?) {
+
+                    val language = languageEditText
+                        .text
+                        ?.trim()
+                        ?.toString()
+
+                    val country = countryEditText
+                        .text
+                        ?.trim()
+                        ?.toString()
+
+                    if (
+                        !language.isNullOrEmpty() &&
+                        !country.isNullOrEmpty() &&
+                        language.length == 2 &&
+                        country.length == 2
+                    ) {
+
+                        NewPipe.setupLocalization(
+                            Localization(language.lowercase()),
+                            ContentCountry(country.uppercase())
+                        )
+
+                        with(sharedPref?.edit()) {
+
+                            this?.putString(
+                                "language",
+                                language.lowercase()
+                            )
+
+                            this?.putString(
+                                "country",
+                                country.uppercase()
+                            )
+
+                            this?.apply()
+                        }
+
+                        showToast(
+                            "Localization saved!\nRestart app to apply changes"
+                        )
+
+                        dismiss()
+
+                    } else {
+
+                        showToast(
+                            "Use 2 ISO characters only\nExample:\nid / ID"
+                        )
                     }
-
-                    showToast("Saved!\n Restart the app for the changes to take effect")
-                    dismiss()
-                } else {
-                    showToast("Be sure to fill both fields with the 2 ISO characters")
                 }
-
             }
-        })
-
+        )
     }
 }
