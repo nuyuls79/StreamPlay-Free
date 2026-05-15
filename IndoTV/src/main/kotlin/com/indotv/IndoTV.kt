@@ -16,7 +16,7 @@ import java.util.Base64
 
 class IndoTV : MainAPI() {
     override var lang = "id"
-    override var mainUrl = "https://waduk.x10.network/test12.m3u"
+    override var mainUrl = "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/refs/heads/main/demo.m3u"
     override var name = "Indo IPTV"
     override val hasMainPage = true
     override val hasChromecastSupport = true
