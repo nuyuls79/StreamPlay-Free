@@ -38,9 +38,12 @@ class HomeCookingRocks : MainAPI() {
             val link = titleElement.attr("href")
             
             val imgElement = element.selectFirst("img")
-            val image = imgElement?.attr("data-src")?.takeIf { it.isNotBlank() }
+            val rawImage = imgElement?.attr("data-src")?.takeIf { it.isNotBlank() }
                 ?: imgElement?.attr("data-lazy-src")?.takeIf { it.isNotBlank() }
                 ?: imgElement?.attr("src")
+            
+            // 👇 PERBAIKAN POSTER: Hanya menghapus resolusi yang ada di akhir nama file (sebelum ekstensi)
+            val image = rawImage?.replace(Regex("""-\d+x\d+(?=\.[^.]+$)"""), "")
             
             newMovieSearchResponse(title, link, TvType.Movie) {
                 this.posterUrl = image
@@ -59,9 +62,12 @@ class HomeCookingRocks : MainAPI() {
             val url = titleElement.attr("href")
             
             val imgElement = element.selectFirst("img")
-            val image = imgElement?.attr("data-src")?.takeIf { it.isNotBlank() }
+            val rawImage = imgElement?.attr("data-src")?.takeIf { it.isNotBlank() }
                 ?: imgElement?.attr("data-lazy-src")?.takeIf { it.isNotBlank() }
                 ?: imgElement?.attr("src")
+            
+            // 👇 PERBAIKAN POSTER: Hanya menghapus resolusi yang ada di akhir nama file (sebelum ekstensi)
+            val image = rawImage?.replace(Regex("""-\d+x\d+(?=\.[^.]+$)"""), "")
             
             newMovieSearchResponse(title, url, TvType.Movie) {
                 this.posterUrl = image
@@ -72,7 +78,11 @@ class HomeCookingRocks : MainAPI() {
     override suspend fun load(url: String): LoadResponse? {
         val document = app.get(url).document
         val title = document.selectFirst("h1.entry-title")?.text() ?: return null
-        val poster = document.selectFirst("meta[property=og:image]")?.attr("content")
+        
+        val rawPoster = document.selectFirst("meta[property=og:image]")?.attr("content")
+        // 👇 PERBAIKAN POSTER: Hanya menghapus resolusi yang ada di akhir nama file (sebelum ekstensi)
+        val poster = rawPoster?.replace(Regex("""-\d+x\d+(?=\.[^.]+$)"""), "")
+        
         val plot = document.select(".entry-content p").joinToString("\n") { it.text() }.trim()
         val year = document.selectFirst(".gmr-moviedata:contains(Tahun:) a")?.text()?.toIntOrNull()
         val ratingString = document.selectFirst(".gmr-meta-rating span[itemprop=ratingValue]")?.text()
@@ -87,7 +97,7 @@ class HomeCookingRocks : MainAPI() {
         }
     }
 
-    // Fungsi helper eksklusif untuk membongkar BERAPA PUN jumlah script ImaxStreams
+    // Fungsi helper eksklusif untuk membongkar BERAPA PUN jumlah script ImaxStreams dan Ryderjet
     private fun multiUnpack(html: String): String {
         var unpacked = html
         try {
@@ -153,7 +163,8 @@ class HomeCookingRocks : MainAPI() {
                         var iframeSrc = allIframes.firstOrNull { src ->
                             src.contains("pyrox", ignoreCase = true) || 
                             src.contains("4meplayer", ignoreCase = true) || 
-                            src.contains("imaxstreams", ignoreCase = true)
+                            src.contains("imaxstreams", ignoreCase = true) ||
+                            src.contains("ryderjet", ignoreCase = true)
                         } ?: allIframes.firstOrNull()
 
                         if (iframeSrc != null) {
@@ -203,7 +214,7 @@ class HomeCookingRocks : MainAPI() {
                                 if (videoId.isNotEmpty() && videoId != iframeSrc) {
                                     val host = java.net.URI(iframeSrc).host
                                     val apiUrl = "https://$host/api/v1/video?id=$videoId&w=360&h=800&r=$serverUrl"
-                                        
+                                    
                                     try {
                                         val hexResponse = app.get(
                                             apiUrl, 
@@ -255,17 +266,15 @@ class HomeCookingRocks : MainAPI() {
                             // SERVER: ImaxStreams (Relative Link Fix)
                             // ==========================================
                             else if (iframeSrc.contains("imaxstreams", ignoreCase = true)) {
-                                val iframeHtml = app.get(iframeSrc, referer = serverUrl).text
-                                val unpackedText = multiUnpack(iframeHtml)
+                                val iframeHtmlData = app.get(iframeSrc, referer = serverUrl).text
+                                val unpackedText = multiUnpack(iframeHtmlData)
                                 
-                                // 👇 PERBAIKAN FINAL: Regex yang mengizinkan URL relatif (tanpa https)
                                 val m3u8Regex = """["']([^"']*\.m3u8[^"']*)["']""".toRegex(RegexOption.IGNORE_CASE)
-                                val match = m3u8Regex.find(unpackedText) ?: m3u8Regex.find(iframeHtml)
+                                val match = m3u8Regex.find(unpackedText) ?: m3u8Regex.find(iframeHtmlData)
                                 
                                 if (match != null) {
                                     var m3u8Url = match.groupValues[1].replace("\\/", "/")
                                     
-                                    // Jika link diawali /, gabungkan dengan nama host imaxstreams
                                     if (m3u8Url.startsWith("/")) {
                                         val host = java.net.URI(iframeSrc).host
                                         m3u8Url = "https://$host$m3u8Url"
@@ -275,6 +284,37 @@ class HomeCookingRocks : MainAPI() {
                                         newExtractorLink(
                                             source = name,
                                             name = "$serverName (ImaxStreams)",
+                                            url = m3u8Url,
+                                            type = ExtractorLinkType.M3U8
+                                        ) {
+                                            this.referer = iframeSrc
+                                            this.quality = Qualities.Unknown.value
+                                        }
+                                    )
+                                }
+                            }
+                            // ==========================================
+                            // SERVER: Ryderjet (Memanfaatkan multiUnpack)
+                            // ==========================================
+                            else if (iframeSrc.contains("ryderjet", ignoreCase = true)) {
+                                val iframeHtmlData = app.get(iframeSrc, referer = serverUrl).text
+                                val unpackedText = multiUnpack(iframeHtmlData)
+                                
+                                val m3u8Regex = """["']([^"']*\.m3u8[^"']*)["']""".toRegex(RegexOption.IGNORE_CASE)
+                                val match = m3u8Regex.find(unpackedText) ?: m3u8Regex.find(iframeHtmlData)
+                                
+                                if (match != null) {
+                                    var m3u8Url = match.groupValues[1].replace("\\/", "/")
+                                    
+                                    if (m3u8Url.startsWith("/")) {
+                                        val host = java.net.URI(iframeSrc).host
+                                        m3u8Url = "https://$host$m3u8Url"
+                                    }
+                                    
+                                    callback.invoke(
+                                        newExtractorLink(
+                                            source = name,
+                                            name = "$serverName (Ryderjet)",
                                             url = m3u8Url,
                                             type = ExtractorLinkType.M3U8
                                         ) {
