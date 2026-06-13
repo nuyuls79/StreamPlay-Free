@@ -5,10 +5,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 buildscript {
 
+    // ========== PERBAIKAN 1 ==========
+    // Ganti master-SNAPSHOT dengan commit hash yang valid
     val cloudstreamGradlePluginVersion = project
         .findProperty("cloudstream.gradle.plugin.version")
         ?.toString()
-        ?: "master-SNAPSHOT"
+        ?: "81b1d424d2"   // commit hash terbaru yang tersedia
+    // =================================
 
     val kotlinVersion = project
         .findProperty("kotlin.version")
@@ -27,18 +30,12 @@ buildscript {
     }
 
     dependencies {
-
-        // Android Gradle Plugin
         classpath(
             "com.android.tools.build:gradle:$androidGradlePluginVersion"
         )
-
-        // CloudStream Gradle Plugin
         classpath(
             "com.github.recloudstream:gradle:$cloudstreamGradlePluginVersion"
         )
-
-        // Kotlin
         classpath(
             "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         )
@@ -73,7 +70,6 @@ val androidTargetSdkVersion = providers
     .toInt()
 
 allprojects {
-
     repositories {
         google()
         mavenCentral()
@@ -100,12 +96,10 @@ subprojects {
     apply(plugin = "com.lagradost.cloudstream3.gradle")
 
     cloudstream {
-
         setRepo(
             System.getenv("GITHUB_REPOSITORY")
                 ?: "https://github.com/duro92/ExtCloud"
         )
-
         authors = listOf("sad25kag")
     }
 
@@ -116,37 +110,23 @@ subprojects {
         defaultConfig {
 
             minSdk = 21
-
             compileSdkVersion(androidCompileSdkVersion)
-
             targetSdk = androidTargetSdkVersion
-        }
 
-        // =========================
-        // JAVA 17 FIX
-        // =========================
+            // ========== PERBAIKAN 2 ==========
+            // Aktifkan BuildConfig untuk library module
+            buildConfig = true
+            // =================================
+        }
 
         compileOptions {
-
-            sourceCompatibility =
-                JavaVersion.VERSION_17
-
-            targetCompatibility =
-                JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
 
-        // =========================
-        // KOTLIN JVM 17 FIX
-        // =========================
-
         tasks.withType<KotlinJvmCompile>() {
-
             compilerOptions {
-
-                jvmTarget.set(
-                    JvmTarget.JVM_17
-                )
-
+                jvmTarget.set(JvmTarget.JVM_17)
                 freeCompilerArgs.addAll(
                     "-Xno-call-assertions",
                     "-Xno-param-assertions",
@@ -157,107 +137,31 @@ subprojects {
     }
 
     dependencies {
-
         val cloudstream by configurations
         val implementation by configurations
 
-        // =========================
-        // CLOUDSTREAM
-        // =========================
+        cloudstream("com.lagradost:cloudstream3:$cloudstreamApiVersion")
 
-        cloudstream(
-            "com.lagradost:cloudstream3:$cloudstreamApiVersion"
-        )
+        implementation(kotlin("stdlib"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationVersion")
 
-        // =========================
-        // KOTLIN
-        // =========================
+        implementation("com.github.Blatzar:NiceHttp:0.4.13")
+        implementation("com.squareup.okhttp3:okhttp:4.12.0")
+        implementation("org.jsoup:jsoup:1.18.3")
 
-        implementation(
-            kotlin("stdlib")
-        )
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0")
+        implementation("com.fasterxml.jackson.core:jackson-databind:2.16.0")
+        implementation("com.google.code.gson:gson:2.11.0")
 
-        implementation(
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion"
-        )
-
-        implementation(
-            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
-        )
-
-        implementation(
-            "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationVersion"
-        )
-
-        // =========================
-        // NETWORK
-        // =========================
-
-        implementation(
-            "com.github.Blatzar:NiceHttp:0.4.13"
-        )
-
-        implementation(
-            "com.squareup.okhttp3:okhttp:4.12.0"
-        )
-
-        // =========================
-        // HTML PARSER
-        // =========================
-
-        implementation(
-            "org.jsoup:jsoup:1.18.3"
-        )
-
-        // =========================
-        // JSON
-        // =========================
-
-        implementation(
-            "com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0"
-        )
-
-        implementation(
-            "com.fasterxml.jackson.core:jackson-databind:2.16.0"
-        )
-
-        implementation(
-            "com.google.code.gson:gson:2.11.0"
-        )
-
-        // =========================
-        // JAVASCRIPT ENGINE
-        // =========================
-
-        implementation(
-            "com.faendir.rhino:rhino-android:1.6.0"
-        )
-
-        implementation(
-            "app.cash.quickjs:quickjs-android:0.9.2"
-        )
-
-        // =========================
-        // UTILS
-        // =========================
-
-        implementation(
-            "me.xdrop:fuzzywuzzy:1.4.0"
-        )
-
-        implementation(
-            "androidx.core:core-ktx:1.16.0"
-        )
+        implementation("com.faendir.rhino:rhino-android:1.6.0")
+        implementation("app.cash.quickjs:quickjs-android:0.9.2")
+        implementation("me.xdrop:fuzzywuzzy:1.4.0")
+        implementation("androidx.core:core-ktx:1.16.0")
     }
 }
 
-// =========================
-// CLEAN
-// =========================
-
 task<Delete>("clean") {
-
-    delete(
-        rootProject.layout.buildDirectory
-    )
+    delete(rootProject.layout.buildDirectory)
 }
