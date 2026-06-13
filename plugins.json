@@ -1646,6 +1646,28 @@
         "name": "KissKH"
     },
     {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kisskh.co&sz=%size%",
+        "fileHash": "sha256-e4f4e088081f1f3a88957f2108d81ee18b40496df64f383176377c0c52d5544f",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/nuyuls79/StreamPlay-Free",
+        "fileSize": 28480,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "michat88"
+        ],
+        "tvTypes": [
+            "AsianDrama",
+            "TvSeries",
+            "Anime",
+            "Movie"
+        ],
+        "version": 17,
+        "internalName": "KisskhProvider",
+        "url": "https://raw.githubusercontent.com/nuyuls79/StreamPlay-Free/builds/KisskhProvider.cs3",
+        "name": "KisskhProvider"
+    },       
+    {
         "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://klikxxi.fit&size=%size%",
         "fileHash": "sha256-ceec8e7e880a8a0fb6edcdc1bd7dfdc4030915b2a5782aae88f83f92b113ee92",
         "apiVersion": 1,
