@@ -8,7 +8,7 @@ buildscript {
     val cloudstreamGradlePluginVersion = project
         .findProperty("cloudstream.gradle.plugin.version")
         ?.toString()
-        ?: "81b1d424d2"   // commit hash valid
+        ?: "81b1d424d2"   // Diganti dari master-SNAPSHOT ke commit hash yang valid
 
     val kotlinVersion = project
         .findProperty("kotlin.version")
@@ -27,9 +27,21 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:$androidGradlePluginVersion")
-        classpath("com.github.recloudstream:gradle:$cloudstreamGradlePluginVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+
+        // Android Gradle Plugin
+        classpath(
+            "com.android.tools.build:gradle:$androidGradlePluginVersion"
+        )
+
+        // CloudStream Gradle Plugin
+        classpath(
+            "com.github.recloudstream:gradle:$cloudstreamGradlePluginVersion"
+        )
+
+        // Kotlin
+        classpath(
+            "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        )
     }
 }
 
@@ -61,6 +73,7 @@ val androidTargetSdkVersion = providers
     .toInt()
 
 allprojects {
+
     repositories {
         google()
         mavenCentral()
@@ -70,11 +83,15 @@ allprojects {
 
 fun Project.cloudstream(
     configuration: CloudstreamExtension.() -> Unit
-) = extensions.getByName<CloudstreamExtension>("cloudstream").configuration()
+) = extensions
+    .getByName<CloudstreamExtension>("cloudstream")
+    .configuration()
 
 fun Project.android(
     configuration: BaseExtension.() -> Unit
-) = extensions.getByName<BaseExtension>("android").configuration()
+) = extensions
+    .getByName<BaseExtension>("android")
+    .configuration()
 
 subprojects {
 
@@ -83,10 +100,12 @@ subprojects {
     apply(plugin = "com.lagradost.cloudstream3.gradle")
 
     cloudstream {
+
         setRepo(
             System.getenv("GITHUB_REPOSITORY")
                 ?: "https://github.com/duro92/ExtCloud"
         )
+
         authors = listOf("sad25kag")
     }
 
@@ -95,25 +114,39 @@ subprojects {
         namespace = "com.excloud"
 
         defaultConfig {
+
             minSdk = 21
+
             compileSdkVersion(androidCompileSdkVersion)
+
             targetSdk = androidTargetSdkVersion
         }
 
-        // ========== AKTIFKAN BUILDCONFIG ==========
-        buildFeatures {
-            buildConfig = true
-        }
-        // =========================================
+        // =========================
+        // JAVA 17 FIX
+        // =========================
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+
+            sourceCompatibility =
+                JavaVersion.VERSION_17
+
+            targetCompatibility =
+                JavaVersion.VERSION_17
         }
 
+        // =========================
+        // KOTLIN JVM 17 FIX
+        // =========================
+
         tasks.withType<KotlinJvmCompile>() {
+
             compilerOptions {
-                jvmTarget.set(JvmTarget.JVM_17)
+
+                jvmTarget.set(
+                    JvmTarget.JVM_17
+                )
+
                 freeCompilerArgs.addAll(
                     "-Xno-call-assertions",
                     "-Xno-param-assertions",
@@ -124,32 +157,107 @@ subprojects {
     }
 
     dependencies {
+
         val cloudstream by configurations
         val implementation by configurations
 
-        cloudstream("com.lagradost:cloudstream3:$cloudstreamApiVersion")
+        // =========================
+        // CLOUDSTREAM
+        // =========================
 
-        implementation(kotlin("stdlib"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationVersion")
+        cloudstream(
+            "com.lagradost:cloudstream3:$cloudstreamApiVersion"
+        )
 
-        implementation("com.github.Blatzar:NiceHttp:0.4.13")
-        implementation("com.squareup.okhttp3:okhttp:4.12.0")
-        implementation("org.jsoup:jsoup:1.18.3")
+        // =========================
+        // KOTLIN
+        // =========================
 
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0")
-        implementation("com.fasterxml.jackson.core:jackson-databind:2.16.0")
-        implementation("com.google.code.gson:gson:2.11.0")
+        implementation(
+            kotlin("stdlib")
+        )
 
-        implementation("com.faendir.rhino:rhino-android:1.6.0")
-        implementation("app.cash.quickjs:quickjs-android:0.9.2")
-        implementation("me.xdrop:fuzzywuzzy:1.4.0")
-        implementation("androidx.core:core-ktx:1.16.0")
+        implementation(
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion"
+        )
+
+        implementation(
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
+        )
+
+        implementation(
+            "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationVersion"
+        )
+
+        // =========================
+        // NETWORK
+        // =========================
+
+        implementation(
+            "com.github.Blatzar:NiceHttp:0.4.13"
+        )
+
+        implementation(
+            "com.squareup.okhttp3:okhttp:4.12.0"
+        )
+
+        // =========================
+        // HTML PARSER
+        // =========================
+
+        implementation(
+            "org.jsoup:jsoup:1.18.3"
+        )
+
+        // =========================
+        // JSON
+        // =========================
+
+        implementation(
+            "com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0"
+        )
+
+        implementation(
+            "com.fasterxml.jackson.core:jackson-databind:2.16.0"
+        )
+
+        implementation(
+            "com.google.code.gson:gson:2.11.0"
+        )
+
+        // =========================
+        // JAVASCRIPT ENGINE
+        // =========================
+
+        implementation(
+            "com.faendir.rhino:rhino-android:1.6.0"
+        )
+
+        implementation(
+            "app.cash.quickjs:quickjs-android:0.9.2"
+        )
+
+        // =========================
+        // UTILS
+        // =========================
+
+        implementation(
+            "me.xdrop:fuzzywuzzy:1.4.0"
+        )
+
+        implementation(
+            "androidx.core:core-ktx:1.16.0"
+        )
     }
 }
 
-// Perbaikan task clean (opsional, hanya untuk menghilangkan deprecation warning)
+// =========================
+// CLEAN (diperbaiki menggunakan tasks.register)
+// =========================
+
 tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
+
+    delete(
+        rootProject.layout.buildDirectory
+    )
 }
