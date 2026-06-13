@@ -5,13 +5,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 buildscript {
 
-    // ========== PERBAIKAN 1 ==========
-    // Ganti master-SNAPSHOT dengan commit hash yang valid
     val cloudstreamGradlePluginVersion = project
         .findProperty("cloudstream.gradle.plugin.version")
         ?.toString()
-        ?: "81b1d424d2"   // commit hash terbaru yang tersedia
-    // =================================
+        ?: "81b1d424d2"   // commit hash valid
 
     val kotlinVersion = project
         .findProperty("kotlin.version")
@@ -30,15 +27,9 @@ buildscript {
     }
 
     dependencies {
-        classpath(
-            "com.android.tools.build:gradle:$androidGradlePluginVersion"
-        )
-        classpath(
-            "com.github.recloudstream:gradle:$cloudstreamGradlePluginVersion"
-        )
-        classpath(
-            "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        )
+        classpath("com.android.tools.build:gradle:$androidGradlePluginVersion")
+        classpath("com.github.recloudstream:gradle:$cloudstreamGradlePluginVersion")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
@@ -79,15 +70,11 @@ allprojects {
 
 fun Project.cloudstream(
     configuration: CloudstreamExtension.() -> Unit
-) = extensions
-    .getByName<CloudstreamExtension>("cloudstream")
-    .configuration()
+) = extensions.getByName<CloudstreamExtension>("cloudstream").configuration()
 
 fun Project.android(
     configuration: BaseExtension.() -> Unit
-) = extensions
-    .getByName<BaseExtension>("android")
-    .configuration()
+) = extensions.getByName<BaseExtension>("android").configuration()
 
 subprojects {
 
@@ -108,16 +95,16 @@ subprojects {
         namespace = "com.excloud"
 
         defaultConfig {
-
             minSdk = 21
             compileSdkVersion(androidCompileSdkVersion)
             targetSdk = androidTargetSdkVersion
-
-            // ========== PERBAIKAN 2 ==========
-            // Aktifkan BuildConfig untuk library module
-            buildConfig = true
-            // =================================
         }
+
+        // ========== AKTIFKAN BUILDCONFIG ==========
+        buildFeatures {
+            buildConfig = true
+        }
+        // =========================================
 
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_17
@@ -162,6 +149,7 @@ subprojects {
     }
 }
 
-task<Delete>("clean") {
+// Perbaikan task clean (opsional, hanya untuk menghilangkan deprecation warning)
+tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
